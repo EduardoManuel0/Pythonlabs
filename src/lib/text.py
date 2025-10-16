@@ -32,16 +32,3 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     d = freq
     d = sorted(d.items(), key = lambda para: (-para[1], para[0]))
     return d
-example_normalize = "  двойные   пробелы  "
-example_tokenize = "emoji 😀 не слово"
-example_count_freq = ["bb","aa","bb","aa","cc"]
-
-res_normalise = normalize(example_normalize)
-res_tokenize = tokenize(example_tokenize)
-res_count_freq = count_freq(example_count_freq)
-res_count_top_n = top_n(res_count_freq)
-
-print(res_normalise)    
-print(res_tokenize)
-print(res_count_freq)
-print(res_count_top_n)
