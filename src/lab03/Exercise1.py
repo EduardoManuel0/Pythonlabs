@@ -1,7 +1,7 @@
 import sys
 import os
-# Добавляем путь к корневой папке проекта
-# Add the path to the project root folder
+# Coloque um pacote protetor de cornevo
+# Adicione o caminho para a pasta raiz do projeto
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from lib import text
 

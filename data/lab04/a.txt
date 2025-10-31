@@ -1,0 +1,4 @@
+2. Função tokenize() - "Separar em Palavrinhas"
+python
+def tokenize(text: str) -> list[str]:
+O que faz: Pega um texto e separa em palavras individuais.

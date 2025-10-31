@@ -13,12 +13,12 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     return s
 
 def tokenize(text: str) -> list[str]:
-    # The regular expression finds (and put it in var "default"):
-        # 1. Words containing a hyphen (\w+-\w+)
-        # 2. Numbers (\d+)
-        # 3. Letter/number/underscore pattern words (\w+)
+    # A expressão regular encontra (e coloca-a na variável "default"):
+# 1. Palavras que contêm um hífen (\w+-\w+)
+# 2. Números (\d+)
+# 3. Palavras com padrão de letras/números/sublinhados (\w+)
     default = r"\w+-\w+|\d+|\w+"
-    #Find all pattern characters in text and return only these.
+   #Encontre todos os caracteres de padrão no texto e devolva apenas estes.
     return re.findall(default, text.lower())
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
