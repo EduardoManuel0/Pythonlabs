@@ -1,4 +1,4 @@
-# ЛР5 — JSON и конвертации (JSON↔CSV, CSV→XLSX):
+# ЛР6_CLI‑утилиты с argparse (cat/grep‑lite + конвертеры): Техническое задание
 
 # Задание A — Задание A
 ![01_greeting](../../images/lab06/Exercise01.png)
