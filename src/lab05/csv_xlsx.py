@@ -30,5 +30,5 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         print(f"Error: CSV File '{csv_path}' not found.")
     except Exception as e:
         print(f"Error: {e}")
-
-csv_to_xlsx("data/samples/cities.csv", "data/out/cities.xlsx")
+if __name__=="__name__":
+        csv_to_xlsx("data/samples/cities.csv", "data/out/cities.xlsx")
