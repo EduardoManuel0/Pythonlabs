@@ -1,0 +1,20 @@
+[
+  {
+    "fio": "Silva Santos João",
+    "birthdate": "2003-05-15",
+    "group": "БИВТ-6",
+    "gpa": 4.2
+  },
+  {
+    "fio": "David Gonçalo Laurindo",
+    "birthdate": "2007-11-30",
+    "group": "A-50",
+    "gpa": 4.0
+  },
+  {
+    "fio": "Petter Parker",
+    "birthdate": "1998-11-30",
+    "group": "M-6",
+    "gpa": 4.2
+  }
+]
