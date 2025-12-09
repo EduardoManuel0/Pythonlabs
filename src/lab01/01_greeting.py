@@ -1,4 +1,4 @@
-name=input("имя: ")
-age=int(input("Возраст: "))
+name = input("имя: ")
+age = int(input("Возраст: "))
 
-print (f"Привет, {name}! Через год тебе будет {age+1}")
+print(f"Привет, {name}! Через год тебе будет {age+1}")

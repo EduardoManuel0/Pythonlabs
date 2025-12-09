@@ -2,6 +2,7 @@ import csv
 from pathlib import Path
 from typing import Union, List, Tuple, Optional
 
+
 def ensure_parent_dir(path: str | Path) -> None:
     """
     Creates parent directories for the specified path if they don't exist.
@@ -11,6 +12,7 @@ def ensure_parent_dir(path: str | Path) -> None:
     path_obj = Path(path)
     if path_obj.parent:
         path_obj.parent.mkdir(parents=True, exist_ok=True)
+
 
 def write_csv(
     rows: List[Union[Tuple, List]],
@@ -44,7 +46,9 @@ def write_csv(
 
     # Если есть заголовок, проверяем его длину
     if header is not None and len(header) != first_row_len:
-        raise ValueError("The header length does not match the length of the data lines.")
+        raise ValueError(
+            "The header length does not match the length of the data lines."
+        )
 
     ensure_parent_dir(path)
 

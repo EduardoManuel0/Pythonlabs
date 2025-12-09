@@ -1,6 +1,7 @@
 import csv
 from openpyxl import Workbook
 
+
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     """
     Converts CSV to XLSX.
@@ -16,7 +17,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         ws.title = "Sheet1"
 
         # Abra o arquivo CSV e leia o conteúdo
-        with open(csv_path, 'r', encoding='utf-8') as csv_file:
+        with open(csv_path, "r", encoding="utf-8") as csv_file:
             reader = csv.reader(csv_file)
             for row in reader:
                 # Adicione cada linha do CSV à planilha
@@ -30,5 +31,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         print(f"Error: CSV File '{csv_path}' not found.")
     except Exception as e:
         print(f"Error: {e}")
-if __name__=="__name__":
-        csv_to_xlsx("data/samples/cities.csv", "data/out/cities.xlsx")
+
+
+if __name__ == "__main__":
+    csv_to_xlsx("data/samples/cities.csv", "data/out/cities.xlsx")
