@@ -17,7 +17,7 @@ def flatten(mat: list[list | tuple]) -> list:
             raise TypeError("Элемент должен быть списком или кортежем")
     return flat_list
 
-
-print(min_max([]))  # (1, 5)
-print(unique_sorted([3, 1, 2, 2, 3]))  # [1, 2, 3]
-print(flatten([[1, 2], (3, 4), [5]]))  # [1, 2, 3, 4, 5]cls
+if __name__ == "__main__":
+    print(min_max([]))  # (1, 5)
+    print(unique_sorted([3, 1, 2, 2, 3]))  # [1, 2, 3]
+    print(flatten([[1, 2], (3, 4), [5]]))  # [1, 2, 3, 4, 5]cls

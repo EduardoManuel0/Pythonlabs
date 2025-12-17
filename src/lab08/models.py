@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import datetime
 
 
-# Decorator to automatically generate __init__ and __post_init__ methods.
+# é um decorador do Python que simplifica a criação de classes que servem principalmente para armazenar dados.
 # And armazenates datas (students' data)
 @dataclass
 class Student:

@@ -11,7 +11,7 @@ from src.lib.text import normalize, tokenize, count_freq, top_n
 
 # --- Testes para a função normalize ---
 @pytest.mark.parametrize(
-    "text_in, expected_out, casefold_val, yo2e_val",
+    "text_in, expected_out, casefold_val, yo2e_va
     [
         # Caso básico: espaços, quebras de linha e casefold padrão
         ("Olá Mundo\nEste é um teste.  ", "olá mundo este é um teste.", True, True),
@@ -37,7 +37,7 @@ def test_normalize(text_in, expected_out, casefold_val, yo2e_val):
 
 
 # --- Testes para a função tokenize ---
-@pytest.mark.parametrize(
+@pytest.mark.parametrize( é um decorador do Pytest que permite testar a mesma função/teste com múltiplos conjuntos de dados de entrada e saída esperada.
     "text_in, expected_out",
     [
         # Caso básico: palavras, números e hífens
