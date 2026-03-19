@@ -24,18 +24,18 @@ def demonstrar_criacao_objetos():
         atleta1 = Atleta("João Silva", 25, 75.5, 1.80, "natacao")
         atleta2 = Atleta("Maria Santos", 22, 62.3, 1.68, "atletismo")
         
-        print("✅ Спортсмены успешно созданы!")
+        print(" Спортсмены успешно созданы!")
         print(atleta1)
         print(atleta2)
         
         # Demonstração de __repr__
-        print("\n🔍 Техническое представление (__repr__):")
+        print("\n Техническое представление (__repr__):")
         print(repr(atleta1))
         
     except ValidationError as e:
-        print(f"❌ Ошибка валидации: {e}")
+        print(f" Ошибка валидации: {e}")
     except Exception as e:
-        print(f"❌ Неожиданная ошибка: {e}")
+        print(f" Неожиданная ошибка: {e}")
 
 
 def demonstrar_validacoes():
@@ -57,13 +57,13 @@ def demonstrar_validacoes():
     
     for desc, campo, nome, idade, peso, altura, esporte in casos_teste:
         try:
-            print(f"\n▶️  Тестирование: {desc}")
+            print(f"\n  Тестирование: {desc}")
             Atleta(nome, idade, peso, altura, esporte)
-            print(f"  ❌ ОШИБКА: {campo} должно было быть отклонено!")
+            print(f"   ОШИБКА: {campo} должно было быть отклонено!")
         except ValidationError as e:
-            print(f"  ✅ Валидация верна: {e}")
+            print(f"   Валидация верна: {e}")
         except Exception as e:
-            print(f"  ❌ Неожиданная ошибка: {e}")
+            print(f"   Неожиданная ошибка: {e}")
 
 
 def demonstrar_propriedades_setters():
@@ -71,44 +71,44 @@ def demonstrar_propriedades_setters():
     cabecalho("ДЕМОНСТРАЦИЯ 3: СВОЙСТВА И СЕТТЕРЫ")
     
     atleta = Atleta("João Silva", 25, 75.5, 1.80, "natacao")
-    print("📝 Начальный спортсмен:")
+    print(" Начальный спортсмен:")
     print(atleta)
     
-    print("\n🔄 Изменение свойств через сеттеры:")
+    print("\n Изменение свойств через сеттеры:")
     
     try:
         atleta.peso = 78.3
         atleta.altura = 1.82
         atleta.esporte = "futebol"
         
-        print("✅ Изменения успешно выполнены!")
+        print(" Изменения успешно выполнены!")
         print(f"  Новый вес: {atleta.peso} кг")
         print(f"  Новый рост: {atleta.altura} м")
         print(f"  Новый вид спорта: {atleta.esporte}")
         
         # Teste de validação no setter
-        print("\n🔒 Тестирование сеттера с неверным значением:")
+        print("\n Тестирование сеттера с неверным значением:")
         atleta.peso = -10
     except ValidationError as e:
-        print(f"  ✅ Сеттер верно отклонил: {e}")
+        print(f"   Сеттер верно отклонил: {e}")
     except ValueError as e:
-        print(f"  ✅ Ошибка состояния: {e}")
+        print(f"   Ошибка состояния: {e}")
 
 
 def demonstrar_atributos_classe():
     """Demonstra atributos de classe"""
     cabecalho("ДЕМОНСТРАЦИЯ 4: АТРИБУТЫ КЛАССА")
     
-    print(f"📊 Всего спортсменов: {Atleta.всего_спортсменов}")
+    print(f" Всего спортсменов: {Atleta.всего_спортсменов}")
     
     # Criar mais alguns atletas
     atleta1 = Atleta("João", 25, 75.5, 1.80, "natacao")
     atleta2 = Atleta("Maria", 22, 62.3, 1.68, "atletismo")
     atleta3 = Atleta("Pedro", 28, 85.0, 1.85, "basquete")
     
-    print(f"📊 После создания 3 спортсменов: {Atleta.всего_спортсменов}")
+    print(f" После создания 3 спортсменов: {Atleta.всего_спортсменов}")
     
-    print("\n🏋️  Доступные весовые категории:")
+    print("\n  Доступные весовые категории:")
     # Tradução das categorias para exibição
     mapa_categorias_ru = {
         'наилегчайший_вес': 'Наилегчайший вес',
@@ -125,7 +125,7 @@ def demonstrar_atributos_classe():
         print(f"  - {categoria_ru}: "
               f"{min_peso}кг - {max_peso if max_peso != float('inf') else '∞'}кг")
     
-    print("\n🔥 Коэффициенты интенсивности:")
+    print("\n Коэффициенты интенсивности:")
     for intensidade, fator in Atleta.коэффициенты_интенсивности.items():
         print(f"  - {intensidade.title()}: {fator}")
 
@@ -136,7 +136,7 @@ def demonstrar_metodos_negocio():
     
     atleta = Atleta("João Silva", 25, 75.5, 1.80, "natacao")
     
-    print("📊 Расчет затраченной энергии (30 минут):")
+    print(" Расчет затраченной энергии (30 минут):")
     # Mapa para tradução das intensidades
     mapa_intensidade = {
         'leve': 'легкая',
@@ -155,7 +155,7 @@ def demonstrar_metodos_negocio():
         classificacao = atleta.classificar_desempenho(pontos)
         print(f"  - {pontos} очков: {classificacao}")
     
-    print("\n⏱️  Расчет темпа:")
+    print("\n  Расчет темпа:")
     ritmo = atleta.calcular_ritmo(10, 50)  # 10km em 50min
     print(f"  - 10 км за 50 мин: {ritmo} мин/км")
 
@@ -166,30 +166,30 @@ def demonstrar_estado_logico():
     
     atleta = Atleta("João Silva", 25, 75.5, 1.80, "natacao")
     
-    print("🟢 Начальное состояние (активен):")
+    print(" Начальное состояние (активен):")
     print(f"  ИМТ: {atleta.imc}")
     print(f"  Категория: {atleta.categoria_peso}")
     
-    print("\n⏸️  Деактивация спортсмена...")
+    print("\n⏸  Деактивация спортсмена...")
     atleta.desativar()
     
-    print("\n🔴 Попытка операций с неактивным спортсменом:")
+    print("\n Попытка операций с неактивным спортсменом:")
     try:
         imc = atleta.imc
     except ValueError as e:
-        print(f"  ✅ ИМТ заблокирован: {e}")
+        print(f"   ИМТ заблокирован: {e}")
     
     try:
         atleta.calcular_energia_gasta(30, 'moderada')
     except ValueError as e:
-        print(f"  ✅ Расчет энергии заблокирован: {e}")
+        print(f"   Расчет энергии заблокирован: {e}")
     
     try:
         atleta.peso = 80.0
     except ValueError as e:
-        print(f"  ✅ Изменение веса заблокировано: {e}")
+        print(f"   Изменение веса заблокировано: {e}")
     
-    print("\n🔄 Реактивация спортсмена...")
+    print("\n Реактивация спортсмена...")
     atleta.ativar()
     print(f"  ИМТ после реактивации: {atleta.imc}")
 
@@ -208,17 +208,17 @@ def demonstrar_fluxos_trabalho():
     print(f"Категория: {atleta1.categoria_peso}")
     
     # Treinamento intenso
-    print("\n📅 Недели 1-4: Интенсивные тренировки")
+    print("\n Недели 1-4: Интенсивные тренировки")
     for semana in range(1, 5):
         # Perde 0.5kg por semana
         atleta1.peso = atleta1.peso - 0.5
         energia = atleta1.calcular_energia_gasta(60 * 5, 'intensa')  # 5h/semana
         print(f"  Неделя {semana}: {atleta1.peso} кг, Энергия: {energia} ккал")
     
-    print(f"\n✅ Итоговая категория: {atleta1.categoria_peso}")
+    print(f"\n Итоговая категория: {atleta1.categoria_peso}")
     
     # FLUXO 2: Mudança de modalidade com validações
-    print("\n\n🔄 ПРОЦЕСС 2: Смена вида спорта")
+    print("\n\n ПРОЦЕСС 2: Смена вида спорта")
     print("-" * 50)
     
     atleta2 = Atleta("Maria Santos", 22, 62.3, 1.68, "atletismo")
@@ -227,15 +227,15 @@ def demonstrar_fluxos_trabalho():
     try:
         print("\nПопытка сменить на плавание...")
         atleta2.esporte = "natacao"
-        print(f"✅ Новый вид спорта: {atleta2.esporte}")
+        print(f" Новый вид спорта: {atleta2.esporte}")
         
         print("\nПопытка сменить на неверный вид спорта...")
         atleta2.esporte = "xadrez"
     except ValidationError as e:
-        print(f"❌ {e}")
+        print(f" {e}")
     
     # FLUXO 3: Evolução de nível
-    print("\n\n📈 ПРОЦЕСС 3: Эволюция уровня")
+    print("\n\n ПРОЦЕСС 3: Эволюция уровня")
     print("-" * 50)
     
     atleta3 = Atleta("Pedro Costa", 20, 70.0, 1.75, "jiu-jitsu")
@@ -252,7 +252,7 @@ def main():
     print("="*70)
     print(" LAB01 - КЛАСС ATLETA (ФИТНЕС/СПОРТ)")
     print("="*70)
-    print("\n📁 Структура с отдельным модулем validate.py")
+    print("\n Структура с отдельным модулем validate.py")
     print("\nВыполнение всех демонстраций...\n")
     
     demonstrar_criacao_objetos()
@@ -264,7 +264,7 @@ def main():
     demonstrar_fluxos_trabalho()
     
     print("\n" + "="*70)
-    print("✅ КОНЕЦ ДЕМОНСТРАЦИИ")
+    print(" КОНЕЦ ДЕМОНСТРАЦИИ")
     print("="*70)
 
 

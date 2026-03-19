@@ -181,12 +181,12 @@ class Atleta:
     def ativar(self):
         """Ativa o atleta"""
         self._ativo = True
-        print(f"✅ Спортсмен {self._nome} успешно активирован.")
+        print(f" Спортсмен {self._nome} успешно активирован.")
     
     def desativar(self):
         """Desativa o atleta"""
         self._ativo = False
-        print(f"⏸️  Спортсмен {self._nome} успешно деактивирован.")
+        print(f"⏸  Спортсмен {self._nome} успешно деактивирован.")
     
     def atualizar_nivel(self, pontuacao):
         """Atualiza o nível do atleta baseado na pontuação"""
@@ -255,13 +255,13 @@ class Atleta:
         pontos_val = validate_pontos(pontos)
         
         if pontos_val < 50:
-            return "❌ Нужно улучшать"
+            return " Нужно улучшать"
         elif pontos_val < 70:
-            return "👍 Средний результат"
+            return " Средний результат"
         elif pontos_val < 90:
-            return "🌟 Хороший результат"
+            return " Хороший результат"
         else:
-            return "🏆 Отличный результат"
+            return " Отличный результат"
     
     def calcular_ritmo(self, distancia_km: float, tempo_minutos: float):
         """
@@ -286,7 +286,7 @@ class Atleta:
     
     def __str__(self):
         """Representação amigável do objeto"""
-        estado = "🟢 Активен" if self._ativo else "🔴 Неактивен"
+        estado = " Активен" if self._ativo else " Неактивен"
         
         # Mapeamento das categorias de peso para exibição em russo
         mapa_categorias = {
@@ -308,15 +308,15 @@ class Atleta:
         return (f"\n{'='*50}\n"
                 f"🏃 СПОРТСМЕН: {self._nome}\n"
                 f"{'='*50}\n"
-                f"📋 Регистрация: {self._registro}\n"
-                f"🎯 Вид спорта:  {self._esporte.title()}\n"
-                f"📊 Возраст:     {self._idade} лет\n"
-                f"⚖️  Вес:         {self._peso:.1f} кг\n"
-                f"📏 Рост:        {self._altura:.2f} м\n"
-                f"📈 ИМТ:         {self.imc:.2f} ({self.imc_classificacao})\n"
-                f"🏆 Категория:   {categoria_exibicao}\n"
-                f"⭐ Уровень:     {self._nivel}\n"
-                f"⚡ Состояние:   {estado}\n"
+                f" Регистрация: {self._registro}\n"
+                f" Вид спорта:  {self._esporte.title()}\n"
+                f" Возраст:     {self._idade} лет\n"
+                f"  Вес:         {self._peso:.1f} кг\n"
+                f" Рост:        {self._altura:.2f} м\n"
+                f" ИМТ:         {self.imc:.2f} ({self.imc_classificacao})\n"
+                f" Категория:   {categoria_exibicao}\n"
+                f" Уровень:     {self._nivel}\n"
+                f" Состояние:   {estado}\n"
                 f"{'='*50}")
     
     def __repr__(self):
