@@ -54,3 +54,17 @@
 * __hash__ — Gera um valor hash baseado no número de registro (_registro), permitindo o uso de objetos `Atleta` como chaves em dicionários ou elementos em conjuntos (`set`)    
 
 # Демонстрация проекта
+## ДЕМОНСТРАЦИЯ 1: СОЗДАНИЕ ОБЪЕКТОВ
+![01_greeting](../../images/lab01/01.png)
+## ДЕМОНСТРАЦИЯ 2: ВАЛИДАЦИИ (validate.py)
+![01_greeting](../../images/lab01/02.png)
+ ## ДЕМОНСТРАЦИЯ 3: СВОЙСТВА И СЕТТЕРЫ
+ ![01_greeting](../../images/lab01/03.png)
+  ## ДЕМОНСТРАЦИЯ 4: АТРИБУТЫ КЛАССА
+  ![01_greeting](../../images/lab01/04.png)
+   ## ДЕМОНСТРАЦИЯ 5: БИЗНЕС-МЕТОДЫ
+   ![01_greeting](../../images/lab01/05.png)
+   ## ДЕМОНСТРАЦИЯ 6: ЛОГИЧЕСКОЕ СОСТОЯНИЕ
+   ![01_greeting](../../images/lab01/06.png)
+   ## ДЕМОНСТРАЦИЯ 7: РАБОЧИЕ ПРОЦЕССЫ
+    ![01_greeting](../../images/lab01/07.png)

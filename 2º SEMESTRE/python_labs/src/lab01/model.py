@@ -185,7 +185,7 @@ class Atleta:
     def desativar(self):
         """Desativa o atleta"""
         self._ativo = False
-        print(f"⏸  Спортсмен {self._nome} успешно деактивирован.")
+        print(f"⏸ Спортсмен {self._nome} успешно деактивирован.")
     
     def atualizar_nivel(self, pontuacao):
         """Atualiza o nível do atleta baseado na pontuação"""
