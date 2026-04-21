@@ -1,7 +1,6 @@
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))  # Поднимаем уровень на одну папку вверх
-from lib.validate import *
 class Atleta:
     """
     Classe que representa um atleta com requisitos básicos:
@@ -35,10 +34,10 @@ class Atleta:
         'интенсивная': 0.12
     }
 
-    def __init__(self, nome: str, idade: int, peso: float, altura: float, tipo_desporto: str):
+    def __init__(self, имя: str, возраст: int, вес: float, рост: float, вид_спорта: str):
         """Construtor com validação de dados via módulo validate."""
         nome_val, idade_val, peso_val, altura_val, esporte_val = validate_atleta_data(
-            nome, idade, peso, altura, tipo_desporto
+            имя, возраст, вес, рост, вид_спорта
         )
 
         # Atributos privados

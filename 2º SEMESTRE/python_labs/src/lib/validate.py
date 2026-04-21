@@ -31,7 +31,7 @@ def validate_type(value, expected_type, field_name):
 
 # ========== VALIDAÇÕES ESPECÍFICAS ==========
 
-def validate_nome(имя):
+def validate_nome(nome):
     """
     Valida o nome do atleta
     
@@ -41,9 +41,9 @@ def validate_nome(имя):
     - Mínimo 3 caracteres
     - Apenas letras e espaços
     """
-    validate_type(имя, str, "Имя")
+    validate_type(nome, str, "name")
     
-    nome_stripped = имя.strip()
+    nome_stripped = nome.strip()
     
     if not nome_stripped:
         raise ValidationError("Имя не может быть пустым")
@@ -60,7 +60,7 @@ def validate_nome(имя):
     return nome_stripped
 
 
-def validate_idade(возраст):
+def validate_idade(idade):
     """
     Valida a idade do atleta
     
@@ -68,18 +68,18 @@ def validate_idade(возраст):
     - Deve ser inteiro
     - Entre 1 e 120 anos
     """
-    validate_type(возраст, int, "Возраст")
+    validate_type(idade, int, "age")
     
-    if возраст <= 0:
+    if idade <= 0:
         raise ValidationError("Возраст должен быть больше нуля")
     
-    if возраст > 120:
+    if idade > 120:
         raise ValidationError("Возраст не может быть больше 120 лет")
     
-    return возраст
+    return idade
 
 
-def validate_peso(вес):
+def validate_peso(peso):
     """
     Valida o peso do atleta
     
@@ -88,19 +88,19 @@ def validate_peso(вес):
     - Maior que zero
     - Máximo 300kg
     """
-    validate_type(вес, (int, float), "Вес")
+    validate_type(peso, (int, float), "Вес")
     
-    if вес <= 0:
+    if peso <= 0:
         raise ValidationError("Вес должен быть больше нуля")
     
-    if вес > 300:
+    if peso > 300:
         raise ValidationError("Вес не может быть больше 300 кг")
     
     # Arredonda para 2 casas decimais se for float
-    return round(вес, 2) if isinstance(вес, float) else float(вес)
+    return round(peso, 2) if isinstance(peso, float) else float(peso)
 
 
-def validate_altura(рост):
+def validate_altura(altura):
     """
     Valida a altura do atleta
     
@@ -108,21 +108,21 @@ def validate_altura(рост):
     - Deve ser número (int ou float)
     - Entre 0.5 e 2.5 metros
     """
-    validate_type(рост, (int, float), "Рост")
+    validate_type(altura, (int, float), "Рост")
     
-    if рост <= 0:
+    if altura <= 0:
         raise ValidationError("Рост должен быть больше нуля")
     
-    if рост < 0.5:
+    if altura < 0.5:
         raise ValidationError("Рост не может быть меньше 0.5 м")
     
-    if рост > 2.5:
+    if altura > 2.5:
         raise ValidationError("Рост не может быть больше 2.5 м")
     
-    return round(рост, 2)
+    return round(altura, 2)
 
 
-def validate_esporte(вид_спорта):
+def validate_esporte(tipo_desporto):
     """
     Valida o esporte do atleta
     
@@ -131,9 +131,9 @@ def validate_esporte(вид_спорта):
     - Não pode ser vazio
     - Deve estar na lista de esportes permitidos
     """
-    validate_type(вид_спорта, str, "Вид спорта")
+    validate_type(tipo_desporto, str, "Вид спорта")
     
-    esporte_stripped = вид_спорта.strip().lower()
+    esporte_stripped = tipo_desporto.strip().lower()
     
     if not esporte_stripped:
         raise ValidationError("Вид спорта не может быть пустым")
@@ -155,7 +155,7 @@ def validate_esporte(вид_спорта):
     return esporte_stripped
 
 
-def validate_minutos_atividade(минуты):
+def validate_minutos_atividade(minutos):
     """
     Valida os minutos de atividade
     
@@ -163,15 +163,15 @@ def validate_minutos_atividade(минуты):
     - Deve ser número
     - Maior que zero
     """
-    validate_type(минуты, (int, float), "Минуты активности")
+    validate_type(minutos, (int, float), "Минуты активности")
     
-    if минуты <= 0:
+    if minutos <= 0:
         raise ValidationError("Минуты активности должны быть больше нуля")
     
-    return float(минуты)
+    return float(minutos)
 
 
-def validate_intensidade(интенсивность):
+def validate_intensidade(intensidade):
     """
     Valida a intensidade do treino
     
@@ -179,9 +179,9 @@ def validate_intensidade(интенсивность):
     - Deve ser string
     - Deve ser 'leve', 'moderada' ou 'intensa'
     """
-    validate_type(интенсивность, str, "Интенсивность")
+    validate_type(intensidade, str, "Интенсивность")
     
-    intensidade_lower = интенсивность.lower()
+    intensidade_lower = intensidade.lower()
     intensidades_validas = ['leve', 'moderada', 'intensa']
     
     if intensidade_lower not in intensidades_validas:
@@ -192,7 +192,7 @@ def validate_intensidade(интенсивность):
     return intensidade_lower
 
 
-def validate_pontos(очки):
+def validate_pontos(pontuacao):
     """
     Valida pontuação de desempenho
     
@@ -200,15 +200,15 @@ def validate_pontos(очки):
     - Deve ser número
     - Não pode ser negativo
     """
-    validate_type(очки, (int, float), "Очки")
+    validate_type(pontuacao, (int, float), "Очки")
     
-    if очки < 0:
+    if pontuacao < 0:
         raise ValidationError("Очки не могут быть отрицательными")
     
-    return float(очки)
+    return float(pontuacao)
 
 
-def validate_distancia(расстояние):
+def validate_distancia(dist):
     """
     Valida distância em km
     
@@ -216,15 +216,15 @@ def validate_distancia(расстояние):
     - Deve ser número
     - Maior que zero
     """
-    validate_type(расстояние, (int, float), "Расстояние")
+    validate_type(dist, (int, float), "Расстояние")
     
-    if расстояние <= 0:
+    if dist <= 0:
         raise ValidationError("Расстояние должно быть больше нуля")
     
-    return float(расстояние)
+    return float(dist)
 
 
-def validate_tempo(время):
+def validate_tempo(tmp):
     """
     Valida tempo em minutos
     
@@ -232,64 +232,64 @@ def validate_tempo(время):
     - Deve ser número
     - Maior que zero
     """
-    validate_type(время, (int, float), "Время")
+    validate_type(tmp, (int, float), "Время")
     
-    if время <= 0:
+    if tmp <= 0:
         raise ValidationError("Время должно быть больше нуля")
     
-    return float(время)
+    return float(tmp)
 
 
 # ========== VALIDAÇÕES COMBINADAS ==========
 
-def validate_atleta_data(имя, возраст, вес, рост, вид_спорта):
+def validate_atleta_data(nome, idade, peso, altura, tipo_desporto):
     """
     Valida todos os dados do atleta de uma vez
     
     Returns:
         tuple: Dados validados e normalizados
     """
-    nome_validado = validate_nome(имя)
-    idade_validada = validate_idade(возраст)
-    peso_validado = validate_peso(вес)
-    altura_validada = validate_altura(рост)
-    esporte_validado = validate_esporte(вид_спорта)
+    nome_validado = validate_nome(nome)
+    idade_validada = validate_idade(idade)
+    peso_validado = validate_peso(peso)
+    altura_validada = validate_altura(altura)
+    esporte_validado = validate_esporte(tipo_desporto)
     
     return (nome_validado, idade_validada, peso_validado, 
             altura_validada, esporte_validado)
 
 
-def validate_treino_data(минуты, интенсивность):
+def validate_treino_data(minutos, intensidade):
     """
     Valida dados de treino
     
     Returns:
         tuple: Dados validados
     """
-    minutos_validados = validate_minutos_atividade(минуты)
-    intensidade_validada = validate_intensidade(интенсивность)
+    minutos_validados = validate_minutos_atividade(minutos)
+    intensidade_validada = validate_intensidade(intensidade)
     
     return (minutos_validados, intensidade_validada)
 
 
-def validate_desempenho_data(очки):
+def validate_desempenho_data(pontuacao):
     """
     Valida dados de desempenho
     
     Returns:
         float: Pontos validados
     """
-    return validate_pontos(очки)
+    return validate_pontos(pontuacao)
 
 
-def validate_ritmo_data(расстояние, время):
+def validate_ritmo_data(dist, tmp):
     """
     Valida dados para cálculo de ritmo
     
     Returns:
         tuple: Distância e tempo validados
     """
-    distancia_validada = validate_distancia(расстояние)
-    tempo_validado = validate_tempo(время)
+    distancia_validada = validate_distancia(dist)
+    tempo_validado = validate_tempo(tmp)
     
     return (distancia_validada, tempo_validado)

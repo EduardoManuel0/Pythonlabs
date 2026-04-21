@@ -1,0 +1,28 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+# Virtual environments
+venv/
+venv/
+ENV/
+env/
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+eggs/
+# Test & coverage reports
+htmlcov/
+tox/
+coverage*
+pytest_cache/
+# Jupyter Notebook checkpoints
+ipynb_checkpoints/
+# Environment variables & secrets
+env
+envrc
+# IDE settings
+vscode/
+idea/
+EOL

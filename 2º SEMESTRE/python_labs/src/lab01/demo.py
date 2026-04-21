@@ -4,16 +4,12 @@
 """
 
 from model import *
-import sys
-import os
-
 
 def cabecalho(titulo):
     """Imprime um cabeçalho formatado"""
     print("\n" + "="*70)
     print(f" {titulo}")
     print("="*70)
-
 
 def demonstrar_criacao_objetos():
     """Demonstra a criação de objetos Atleta"""
@@ -36,7 +32,6 @@ def demonstrar_criacao_objetos():
         print(f" Ошибка валидации: {e}")
     except Exception as e:
         print(f" Неожиданная ошибка: {e}")
-
 
 def demonstrar_validacoes():
     """Demonstra as validações do módulo validate.py"""
@@ -64,7 +59,6 @@ def demonstrar_validacoes():
             print(f"   Валидация верна: {e}")
         except Exception as e:
             print(f"   Неожиданная ошибка: {e}")
-
 
 def demonstrar_propriedades_setters():
     """Demonstra propriedades e setters com validação"""
@@ -167,13 +161,14 @@ def demonstrar_estado_logico():
     atleta = Atleta("João Silva", 25, 75.5, 1.80, "natacao")
     
     print(" Начальное состояние (активен):")
-    print(f"  ИМТ: {atleta.imc}")
-    print(f"  Категория: {atleta.categoria_peso}")
+    #print(f"  ИМТ: {atleta.imc}")
+    #print(f"  Категория: {atleta.categoria_peso}")
     
     print("\n⏸  Деактивация спортсмена...")
     atleta.desativar()
     
     print("\n Попытка операций с неактивным спортсменом:")
+    '''
     try:
         imc = atleta.imc
     except ValueError as e:
@@ -188,11 +183,11 @@ def demonstrar_estado_logico():
         atleta.peso = 80.0
     except ValueError as e:
         print(f"   Изменение веса заблокировано: {e}")
-    
+
     print("\n Реактивация спортсмена...")
     atleta.ativar()
     print(f"  ИМТ после реактивации: {atleta.imc}")
-
+    '''
 
 def demonstrar_fluxos_trabalho():
     """Demonstra fluxos de trabalho completos"""
@@ -205,7 +200,7 @@ def demonstrar_fluxos_trabalho():
     atleta1 = Atleta("João Silva", 25, 78.5, 1.80, "natacao")
     print(f"Спортсмен: {atleta1.nome}")
     print(f"Начальный вес: {atleta1.peso} кг")
-    print(f"Категория: {atleta1.categoria_peso}")
+    #print(f"Категория: {atleta1.categoria_peso}")
     
     # Treinamento intenso
     print("\n Недели 1-4: Интенсивные тренировки")
@@ -215,7 +210,7 @@ def demonstrar_fluxos_trabalho():
         energia = atleta1.calcular_energia_gasta(60 * 5, 'intensa')  # 5h/semana
         print(f"  Неделя {semana}: {atleta1.peso} кг, Энергия: {energia} ккал")
     
-    print(f"\n Итоговая категория: {atleta1.categoria_peso}")
+    #print(f"\n Итоговая категория: {atleta1.categoria_peso}")
     
     # FLUXO 2: Mudança de modalidade com validações
     print("\n\n ПРОЦЕСС 2: Смена вида спорта")
