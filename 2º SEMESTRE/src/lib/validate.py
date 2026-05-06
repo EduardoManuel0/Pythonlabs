@@ -35,11 +35,8 @@ def validate_nome(nome):
     """
     Valida o nome do atleta
     
-    Regras:
-    - Deve ser string
-    - Não pode ser vazio
-    - Mínimo 3 caracteres
-    - Apenas letras e espaços
+    Regras atualizadas:
+    - Aceita letras Latinas (A-Z) e Cirílicas (А-Я)
     """
     validate_type(nome, str, "name")
     
@@ -51,13 +48,14 @@ def validate_nome(nome):
     if len(nome_stripped) < 3:
         raise ValidationError("Имя должно содержать минимум 3 символа")
     
-    # Permite letras, espaços, apóstrofos e hífens para nomes compostos
-    if not re.match(r"^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$", nome_stripped):
+    # Adicionado suporte a caracteres cirílicos: \u0400-\u04FF
+    if not re.match(r"^[A-Za-zÀ-ÖØ-öø-ÿ\u0400-\u04FF\s'-]+$", nome_stripped):
         raise ValidationError(
             "Имя должно содержать только буквы, пробелы, апострофы или дефисы"
         )
     
     return nome_stripped
+
 
 
 def validate_idade(idade):

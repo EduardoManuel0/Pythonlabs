@@ -9,7 +9,7 @@ from collection import AtletaCollection
 
 def run():
     print("=" * 60)
-    print("ДЕМОНСТРАЦИЯ ЛР-2: КОЛЛЕКЦИЯ ОБЪЕКТОВ ATHLETA (с переиспользованием model.py из Lab01)")
+    print("ДЕМОНСТРАЦИЯ ЛР-4: КОЛЛЕКЦИЯ ОБЪЕКТОВ ATHLETA (с переиспользованием model.py из Lab01)")
     print("=" * 60)
 
     # Создание коллекции
