@@ -1,0 +1,14 @@
+[
+  {
+    "id": 2,
+    "name": "3",
+    "weight": 3.0,
+    "record": 4.0
+  },
+  {
+    "id": 1,
+    "name": "Edu",
+    "weight": 45.0,
+    "record": 10.0
+  }
+]
